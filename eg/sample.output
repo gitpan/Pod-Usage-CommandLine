@@ -12,7 +12,7 @@ Author:
 
 % perl eg/sample.pl --help
 Usage:
-     sample [--help|-h|-q] [--man|-m] [--version|-v]
+     sample [--help|-h|-q] [--man] [--version]
 
 
 % perl eg/sample.pl --man
@@ -24,7 +24,7 @@ NAME
        sample - sample program to illustrate Pod::Usage::CommandLine
 
 SYNOPSIS
-        sample [--help|-h|-q] [--man|-m] [--version|-v]
+        sample [--help|-h|-q] [--man] [--version]
 
 DESCRIPTION
        Sample program to illustrate Pod::Usage::CommandLine options.

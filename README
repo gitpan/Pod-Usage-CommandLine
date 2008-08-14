@@ -1,5 +1,5 @@
-Pod-Usage-CommandLine version 0.01
-==================================
+Pod-Usage-CommandLine
+=====================
 
 Basically a cut/paste from the boilerplate described in Pod::Usage and
 Getopt::Long so it can be included with a single "use" instead of

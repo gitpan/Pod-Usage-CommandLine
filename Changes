@@ -1,4 +1,8 @@
 Revision history for Perl extension Pod::Usage::CommandLine.
 
+0.02  Thu Aug 14 08:52:01 EDT 2008
+        - Turn on Getopt::Long options: pass_through no_auto_abbrev
+                                        no_ignore_case
+
 0.01  Thu Aug  7 12:50:45 2008
 	- original version;

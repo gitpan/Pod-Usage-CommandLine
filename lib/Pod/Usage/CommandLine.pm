@@ -3,7 +3,7 @@ package Pod::Usage::CommandLine;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Pod::Usage;
 use Getopt::Long;
@@ -11,11 +11,13 @@ use File::Basename;
 
 INIT
 {
-    GetOptions
+    Getopt::Long::Parser
+    ->new(config => [qw(pass_through no_auto_abbrev no_ignore_case)] )
+    ->getoptions
     (
-        'help|?' => sub { pod2usage(-exitstatus => 0); },
-        man      => sub { pod2usage(-exitstatus => 0, -verbose => 2); },
-        version  => sub
+        'help|h|?' => sub { pod2usage(-exitstatus => 0); },
+        man        => sub { pod2usage(-exitstatus => 0, -verbose => 2); },
+        version    => sub
         {
             pod2usage(-exitstatus => 0,
                       -msg => basename($0) . ' ' . ($main::VERSION or '0.0'),
@@ -45,7 +47,6 @@ Pod::Usage::CommandLine - Add some common command line options from Pod::Usage
   my_program.pl -h
   my_program.pl '-?'
   my_program.pl --man
-  my_program.pl -m
 
 =head1 DESCRIPTION
 
