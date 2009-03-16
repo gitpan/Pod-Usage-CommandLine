@@ -3,7 +3,7 @@ package Pod::Usage::CommandLine;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Pod::Usage;
 use Getopt::Long;
@@ -16,7 +16,7 @@ INIT
     ->getoptions
     (
         'help|h|?' => sub { pod2usage(-exitstatus => 0); },
-        man        => sub { pod2usage(-exitstatus => 0, -verbose => 2); },
+        'man|m'    => sub { pod2usage(-exitstatus => 0, -verbose => 2); },
         version    => sub
         {
             pod2usage(-exitstatus => 0,
@@ -47,6 +47,7 @@ Pod::Usage::CommandLine - Add some common command line options from Pod::Usage
   my_program.pl -h
   my_program.pl '-?'
   my_program.pl --man
+  my_program.pl -m
 
 =head1 DESCRIPTION
 

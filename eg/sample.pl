@@ -15,7 +15,7 @@ sample - sample program to illustrate Pod::Usage::CommandLine
 
 =head1 SYNOPSIS
 
- sample [--help|-h|-q] [--man] [--version]
+ sample [--help|-h|-q] [--man|-m] [--version]
 
 =head1 DESCRIPTION
 
