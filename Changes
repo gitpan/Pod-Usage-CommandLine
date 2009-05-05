@@ -1,5 +1,9 @@
 Revision history for Perl extension Pod::Usage::CommandLine.
 
+0.04  Tue May  5 12:45:29 EDT 2009
+        - Added optional exports GetOptions/pod2usage per
+          suggestion/patch from Lars Dieckow <daxim@cpan.org>
+
 0.03  Mon Mar 16 09:08:49 EDT 2009
         - Add '-m' as an alias for '--man'
 

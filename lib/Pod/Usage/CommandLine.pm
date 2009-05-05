@@ -3,11 +3,13 @@ package Pod::Usage::CommandLine;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Pod::Usage;
 use Getopt::Long;
 use File::Basename;
+use base 'Exporter';
+our @EXPORT_OK = qw(GetOptions pod2usage);
 
 INIT
 {
@@ -49,6 +51,13 @@ Pod::Usage::CommandLine - Add some common command line options from Pod::Usage
   my_program.pl --man
   my_program.pl -m
 
+  # You can also export GetOptions and/or pod2usage if you need them:
+
+  use Pod::Usage::CommandLine qw(GetOptions pod2usage);
+
+  my %opt;
+  GetOptions(\%opt, @getopt_long_specs) or pod2usage;
+
 =head1 DESCRIPTION
 
 Basically a cut/paste from the boilerplate described in Pod::Usage and
@@ -60,14 +69,23 @@ See L<Getopt::Long> for all the intricacies of specifying options.
 Set $VERSION in a BEGIN block as shown above so it will get picked up
 by the '--version' option.
 
+=head1 EXPORTS
+
+C<GetOptions> and C<pod2usage> are exported on demand.
+
 =head1 SEE ALSO
 
- L<Pod::Usage>
- L<Getopt::Long>
+L<Pod::Usage>, L<Getopt::Long>
 
 =head1 AUTHOR
 
 Curt Tilmes, E<lt>ctilmes@cpan.orgE<gt>
+
+=head1 CREDITS
+
+Thanks to:
+
+Lars Dieckow <daxim@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
